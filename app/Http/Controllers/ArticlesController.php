@@ -19,7 +19,7 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
+        $articles = Article::all()->where('user_id','=',Auth::id());
         return view('articles')->with('articles', $articles);
     }
 
@@ -60,8 +60,7 @@ class ArticlesController extends Controller
             # code...
             $article->tags()->sync([$tag => ['taggable_type' => 'article']]);
         }
-
-        return view('view_article')->with('article', $article);
+        return $this->show($article->id);
     }
 
     /**
@@ -78,8 +77,17 @@ class ArticlesController extends Controller
             report($e);
             return back()->withError($e->getMessage())->withInput();
         }
+        
         //everything went fine
-        return view('view_article')->with('article', $article);
+        $article_tags = DB::table('tags')
+        ->join('taggables', function ($join) use ($id) {
+            $join->on('tags.id', '=', 'taggables.tag_id');
+            $join->where([
+                ['taggable_id', '=', $id],
+                ['taggable_type', '=', 'article']
+            ]);
+        })->get();
+        return view('view_article')->with('data', ['article' => $article , 'tags' => $article_tags]);
     }
 
     /**
@@ -147,11 +155,8 @@ class ArticlesController extends Controller
             $article->tags()->sync([$tag => ['taggable_type' => 'article']]);
 
         }
-        // // dd($items);
-        // $article->tags()->sync($items);
+        return $this->show($article->id);
 
-
-        return view('view_article')->with('article', $article);
     }
 
     /**

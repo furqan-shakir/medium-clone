@@ -5,8 +5,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <h2>Edit Article</h2>
             <div class="card">
-
                 <div class="card-body">
                     <form method="post" action="{{url('/articles/update/' . $data['article']->id)}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
@@ -38,7 +38,7 @@
 
                         <div class="form-group float-right">
                             <button type="submit" class="btn btn-primary">Save</button>
-                            <button type="button" class="btn btn-danger " id="btnClear">Clear</button>
+                            <a  class="btn btn-danger " id="btnClear" href="{{ url('articles/list/') }}">Cancel</a>
                         </div>
                     </form>
                 </div>
@@ -57,9 +57,9 @@
             tabsize: 2,
             height: 300
         });
-        $('#btnClear').on('click', function() {
-            $('#idcontent').summernote('code', null);
-        });
+        // $('#btnClear').on('click', function() {
+        //     $('#idcontent').summernote('code', null);
+        // });
 
         $('.select2').select2();
 

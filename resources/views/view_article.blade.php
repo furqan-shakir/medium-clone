@@ -8,9 +8,18 @@
             <div class="card">
 
                 <div class="card-body">
-                    <h1>{!!$article->title!!}</h1>
+                    <h1>{!!$data['article']->title!!}</h1>
                     <hr>
-                    {!!$article->content!!}
+                    {!!$data['article']->content!!}
+
+                    <div class="form-group">
+                        <label for="tags[]">Tags</label>
+                        <select readonly="true" class="col-md-12 select2" id="tags[]" name="tags[]" multiple="multiple" required>
+                            @foreach($data['tags'] as $tag)
+                            <option value="{{$tag->id}}" selected="selected">{{$tag->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
@@ -22,7 +31,9 @@
 
 <script>
     $(document).ready(function() {
-     
+        $('.select2').select2({
+            disabled: true
+        });
     });
 </script>
 

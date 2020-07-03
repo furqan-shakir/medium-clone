@@ -1,102 +1,342 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <!-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet"> -->
-        <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+@extends('layouts.app')
+@section('title', 'Welcome')
+@section('content')
 
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+<div class="mainheading">
+    <h1 class="sitetitle">Medium</h1>
+    <p class="lead">
+        The most popular online publishing platform
+    </p>
+</div>
+<!-- End Site Title
+================================================== -->
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+<!-- Begin Featured
+	================================================== -->
+<section class="featured-posts">
+    <div class="section-title">
+        <h2><span>Featured</span></h2>
+    </div>
+    <div class="card-columns listfeaturedtag">
+        <!-- begin post -->
+        <div class="card">
+            <div class="row">
+                <div class="col-md-5 wrapthumbnail">
+                    <a href="#">
+                        <div class="thumbnail" style="background-image:url(img/demopic/1.jpg);">
+                        </div>
+                    </a>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <button class="btn btn-primary" href="https://laravel.com/docs">Docs</button>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="col-md-7">
+                    <div class="card-block">
+                        <h2 class="card-title"><a href="#">We're living some strange times</a></h2>
+                        <h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+                        <div class="metafooter">
+                            <div class="wrapfooter">
+                                <span class="meta-footer-thumb">
+                                    <a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+                                </span>
+                                <span class="author-meta">
+                                    <span class="post-name"><a href="author.html">Steve</a></span><br />
+                                    <span class="post-date">22 July 2020</span><span class="dot"></span><span class="post-read">6 min read</span>
+                                </span>
+                                <span class="post-read-more"><a href="#" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
+                                            <path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path>
+                                        </svg></a></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
-<script src="{{ asset('js/app.js') }}"></script>
-</html>
+        <!-- end post -->
+
+        <!-- begin post -->
+        <div class="card">
+            <div class="row">
+                <div class="col-md-5 wrapthumbnail">
+                    <a href="#">
+                        <div class="thumbnail" style="background-image:url(img/demopic/2.jpg);">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-7">
+                    <div class="card-block">
+                        <h2 class="card-title"><a href="#">The beauty of this world is in your heart</a></h2>
+                        <h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+                        <div class="metafooter">
+                            <div class="wrapfooter">
+                                <span class="meta-footer-thumb">
+                                    <a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+                                </span>
+                                <span class="author-meta">
+                                    <span class="post-name"><a href="author.html">Jane</a></span><br />
+                                    <span class="post-date">22 July 2020</span><span class="dot"></span><span class="post-read">6 min read</span>
+                                </span>
+                                <span class="post-read-more"><a href="#" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
+                                            <path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path>
+                                        </svg></a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end post -->
+
+        <!-- begin post -->
+        <div class="card">
+            <div class="row">
+                <div class="col-md-5 wrapthumbnail">
+                    <a href="#">
+                        <div class="thumbnail" style="background-image:url(img/demopic/3.jpg);">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-7">
+                    <div class="card-block">
+                        <h2 class="card-title"><a href="#">Dreaming of Las Vegas Crazyness</a></h2>
+                        <h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+                        <div class="metafooter">
+                            <div class="wrapfooter">
+                                <span class="meta-footer-thumb">
+                                    <a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+                                </span>
+                                <span class="author-meta">
+                                    <span class="post-name"><a href="author.html">Mary</a></span><br />
+                                    <span class="post-date">22 July 2020</span><span class="dot"></span><span class="post-read">6 min read</span>
+                                </span>
+                                <span class="post-read-more"><a href="#" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
+                                            <path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path>
+                                        </svg></a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end post -->
+
+        <!-- begin post -->
+        <div class="card">
+            <div class="row">
+                <div class="col-md-5 wrapthumbnail">
+                    <a href="#">
+                        <div class="thumbnail" style="background-image:url(img/demopic/4.jpg);">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-7">
+                    <div class="card-block">
+                        <h2 class="card-title"><a href="#">San Francisco at its best view in all seasons</a></h2>
+                        <h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+                        <div class="metafooter">
+                            <div class="wrapfooter">
+                                <span class="meta-footer-thumb">
+                                    <a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+                                </span>
+                                <span class="author-meta">
+                                    <span class="post-name"><a href="author.html">Sal</a></span><br />
+                                    <span class="post-date">22 July 2020</span><span class="dot"></span><span class="post-read">6 min read</span>
+                                </span>
+                                <span class="post-read-more"><a href="#" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
+                                            <path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path>
+                                        </svg></a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end post -->
+
+    </div>
+</section>
+<!-- End Featured
+	================================================== -->
+
+<!-- Begin List Posts
+	================================================== -->
+<section class="recent-posts">
+    <div class="section-title">
+        <h2><span>All Stories</span></h2>
+    </div>
+    <div class="card-columns listrecent">
+
+        <!-- begin post -->
+        <div class="card">
+            <a href="#">
+                <img class="img-fluid" src="img/demopic/5.jpg" alt="">
+            </a>
+            <div class="card-block">
+                <h2 class="card-title"><a href="#">Autumn doesn't have to be nostalgic, you know?</a></h2>
+                <h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+                <div class="metafooter">
+                    <div class="wrapfooter">
+                        <span class="meta-footer-thumb">
+                            <a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+                        </span>
+                        <span class="author-meta">
+                            <span class="post-name"><a href="author.html">Sal</a></span><br />
+                            <span class="post-date">22 July 2020</span><span class="dot"></span><span class="post-read">6 min read</span>
+                        </span>
+                        <span class="post-read-more"><a href="#" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
+                                    <path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path>
+                                </svg></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end post -->
+
+        <!-- begin post -->
+        <div class="card">
+            <a href="#">
+                <img class="img-fluid" src="img/demopic/6.jpg" alt="">
+            </a>
+            <div class="card-block">
+                <h2 class="card-title"><a href="#">Best galleries in the world with photos</a></h2>
+                <h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+                <div class="metafooter">
+                    <div class="wrapfooter">
+                        <span class="meta-footer-thumb">
+                            <a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+                        </span>
+                        <span class="author-meta">
+                            <span class="post-name"><a href="author.html">Sal</a></span><br />
+                            <span class="post-date">22 July 2020</span><span class="dot"></span><span class="post-read">6 min read</span>
+                        </span>
+                        <span class="post-read-more"><a href="#" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
+                                    <path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path>
+                                </svg></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end post -->
+
+        <!-- begin post -->
+        <div class="card">
+            <a href="#">
+                <img class="img-fluid" src="img/demopic/7.jpg" alt="">
+            </a>
+            <div class="card-block">
+                <h2 class="card-title"><a href="#">Little red dress and a perfect summer</a></h2>
+                <h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+                <div class="metafooter">
+                    <div class="wrapfooter">
+                        <span class="meta-footer-thumb">
+                            <a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+                        </span>
+                        <span class="author-meta">
+                            <span class="post-name"><a href="author.html">Sal</a></span><br />
+                            <span class="post-date">22 July 2020</span><span class="dot"></span><span class="post-read">6 min read</span>
+                        </span>
+                        <span class="post-read-more"><a href="#" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
+                                    <path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path>
+                                </svg></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end post -->
+
+        <!-- begin post -->
+        <div class="card">
+            <a href="#">
+                <img class="img-fluid" src="img/demopic/8.jpg" alt="">
+            </a>
+            <div class="card-block">
+                <h2 class="card-title"><a href="#">Thinking outside the box can help you prosper</a></h2>
+                <h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+                <div class="metafooter">
+                    <div class="wrapfooter">
+                        <span class="meta-footer-thumb">
+                            <a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+                        </span>
+                        <span class="author-meta">
+                            <span class="post-name"><a href="author.html">Sal</a></span><br />
+                            <span class="post-date">22 July 2020</span><span class="dot"></span><span class="post-read">6 min read</span>
+                        </span>
+                        <span class="post-read-more"><a href="#" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
+                                    <path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path>
+                                </svg></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end post -->
+
+        <!-- begin post -->
+        <div class="card">
+            <a href="#">
+                <img class="img-fluid" src="img/demopic/9.jpg" alt="">
+            </a>
+            <div class="card-block">
+                <h2 class="card-title"><a href="#">10 Things you should know about choosing your house</a></h2>
+                <h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+                <div class="metafooter">
+                    <div class="wrapfooter">
+                        <span class="meta-footer-thumb">
+                            <a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+                        </span>
+                        <span class="author-meta">
+                            <span class="post-name"><a href="author.html">Sal</a></span><br />
+                            <span class="post-date">22 July 2020</span><span class="dot"></span><span class="post-read">6 min read</span>
+                        </span>
+                        <span class="post-read-more"><a href="#" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
+                                    <path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path>
+                                </svg></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end post -->
+
+        <!-- begin post -->
+        <div class="card">
+            <a href="#">
+                <img class="img-fluid" src="img/demopic/10.jpg" alt="">
+            </a>
+            <div class="card-block">
+                <h2 class="card-title"><a href="#">Visiting the world means learning cultures</a></h2>
+                <h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+                <div class="metafooter">
+                    <div class="wrapfooter">
+                        <span class="meta-footer-thumb">
+                            <a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+                        </span>
+                        <span class="author-meta">
+                            <span class="post-name"><a href="author.html">Sal</a></span><br />
+                            <span class="post-date">22 July 2020</span><span class="dot"></span><span class="post-read">6 min read</span>
+                        </span>
+                        <span class="post-read-more"><a href="#" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
+                                    <path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path>
+                                </svg></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end post -->
+
+    </div>
+</section>
+<!-- End List Posts
+	================================================== -->
+
+<!-- Begin Footer
+	================================================== -->
+<div class="footer">
+    <p class="pull-left">
+        Copyright &copy; 2020 Medium
+    </p>
+    <p class="pull-right">
+        Mediumish Theme by <a target="_blank" href="https://www.linkedin.com/in/furqan-mahmoud-840223b7/">Furqan Mahmoud</a>
+    </p>
+    <div class="clearfix">
+    </div>
+</div>
+<!-- End Footer
+	================================================== -->
+@endsection

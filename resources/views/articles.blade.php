@@ -5,8 +5,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10 ">
+            <h2>Hi! This is the admin panel, You can manage your own articles from here :)</h2>
             <div class="card">
-
                 <div class="card-body">
                     <div class="form-group">
                         <a class="btn btn-primary" href="{{ url('articles/create') }}">New Article</a>
@@ -63,8 +63,7 @@
 @section('scripts')
 
 <script>
-    $(document).ready(function() {
-    });
+    $(document).ready(function() {});
 </script>
 
 @endsection
