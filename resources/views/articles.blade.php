@@ -21,7 +21,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($articles as $article)
+                            @forelse ($articles as $article)
                             <tr>
                                 <td>{{$article->title}}</td>
                                 <td>
@@ -30,7 +30,11 @@
                                     <a data-toggle="modal" data-target="#exampleModal" href="#"><img title="delete" src="https://img.icons8.com/android/24/000000/trash.png" /></a>
                                 </td>
                             </tr>
-                            @endforeach
+                            @empty
+                            <tr>
+                                <td colspan="2">No arrticles</td>
+                            </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>
@@ -39,6 +43,7 @@
     </div>
 </div>
 <!-- Modal -->
+@if(!empty($article))
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -58,6 +63,7 @@
         </div>
     </div>
 </div>
+@endif
 @endsection
 
 @section('scripts')
