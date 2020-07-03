@@ -46,4 +46,11 @@ php artisan db:seed
 12. Serve the application locally
 ```bash
 php artisan serve
+```
 
+## Usage
+1. register and login yourself.
+2. start creating,editing or even deleting your articles.
+3. What you see is what you get.
+4. You will need to tag your articles too. 
+3. use the breadcrumbs to navigate easily throuhg the admin panel.
