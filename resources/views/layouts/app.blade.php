@@ -77,13 +77,13 @@
                 <!-- Begin Menu -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Stories <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Stories <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Post</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="author.html">Author</a>
+                        <a class="nav-link" href="#">Author</a>
                     </li>
 
                     <!-- Authentication Links -->
